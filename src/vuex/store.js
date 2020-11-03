@@ -1,6 +1,6 @@
 import applyMixin from './mixin'
 import { forEach } from './util'
-
+import ModuleCollection from './module/module-collection'
 function getState(store, path) {
   return path.reduce((newState, current) => {
     return newState[current]
