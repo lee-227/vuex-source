@@ -24,8 +24,6 @@ function installModule(store, rootState, path, module) {
       store._withCommitting(() => {
         mutation.call(store, getState(store, path), payload)
       })
-      console.log(1);
-      
       store._subscribers.forEach((sub) => sub({ mutation, type }, store.state))
     })
   })
