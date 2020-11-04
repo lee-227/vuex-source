@@ -8,7 +8,7 @@ function vuexInit() {
   if (options.store) {
     this.$store = options.store
   } else if (options.parent && options.parent.$store) {
-    this.$store = options.parent.store
+    this.$store = options.parent.$store
   }
 }
 export default applyMixin

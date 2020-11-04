@@ -1,4 +1,4 @@
-import { Module } from 'module'
+import Module from './module'
 import { forEach } from '../util'
 
 export default class ModuleCollection {

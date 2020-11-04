@@ -1,6 +1,7 @@
 import applyMixin from './mixin'
 import { forEach } from './util'
 import ModuleCollection from './module/module-collection'
+let Vue
 function getState(store, path) {
   return path.reduce((newState, current) => {
     return newState[current]
@@ -23,6 +24,8 @@ function installModule(store, rootState, path, module) {
       store._withCommitting(() => {
         mutation.call(store, getState(store, path), payload)
       })
+      console.log(1);
+      
       store._subscribers.forEach((sub) => sub({ mutation, type }, store.state))
     })
   })
@@ -75,7 +78,7 @@ function resetStoreVm(store, state) {
   }
   if (oldVm) {
     Vue.nextTick(() => {
-      oldVm.$destory()
+      oldVm.$destroy()
     })
   }
 }

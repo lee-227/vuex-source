@@ -25,7 +25,7 @@ export default class Module {
       forEach(this._rawModule.actions, fn)
     }
   }
-  forEachGetter(fn) {
+  forEachGetters(fn) {
     if (this._rawModule.getters) {
       forEach(this._rawModule.getters, fn)
     }
